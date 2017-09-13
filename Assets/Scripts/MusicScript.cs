@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicScript : MonoBehaviour {
+public class MusicScript : MonoBehaviour { //dolphins
 	public AudioClip musicClip;
 	public AudioSource musicSource;
 	// Use this for initialization
