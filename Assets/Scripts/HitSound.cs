@@ -12,11 +12,11 @@ public class HitSound : MonoBehaviour
 		//called on Collision with a 2D rigidbody
 		if (c.gameObject.name == "Ball(Clone)") { //ensures that this sound only plays when the rock's hit each other
 			MusicSource.clip = MusicClip;//sets the clip the source should play
-            MusicSource.Play();
-        }
-    }
+			MusicSource.Play();
+		}
+	}
 
-    void Start()
+	void Start()
 	{
 		//makes the collision sound for each rock slightly different
 		AudioSource audioSource = GetComponent<AudioSource>();
