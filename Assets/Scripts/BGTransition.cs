@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BGTransition : MonoBehaviour {
-	// Use this for initialization
+public class BGTransition : MonoBehaviour 
+{
 	private float timeLeft = 10.0f;
 	private const float duration = 10.0f;
 	private float t = 0.0f;
@@ -11,31 +11,30 @@ public class BGTransition : MonoBehaviour {
 	private Color night = new Color();
 	private bool isDay = true;
 
-	void Start () {
+	void Start()
+	{
 		setBackgroundColors();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	//Update is used for a day night cycle
+	void Update()
+	{
 		timeLeft -= Time.deltaTime;
 		if (timeLeft <= 0) {
 			if (isDay) {
 				if (t < 1.0) {
 					Camera.main.backgroundColor = Color.Lerp (day, night, t);
 					t += Time.deltaTime / duration;
-				}
-				else {
+				} else { //!t < 1.0
 					isDay = false;
 					t = 0.0f;
 					timeLeft = 30.0f;
 				}
-			} 
-			else {
+			} else { //!isDay
 				if (t < 1.0) {
 					Camera.main.backgroundColor = Color.Lerp (night, day, t);
 					t += Time.deltaTime / duration;
-				}
-				else {
+				} else {
 					isDay = true;
 					t = 0.0f;
 					timeLeft = 30.0f;
@@ -44,7 +43,8 @@ public class BGTransition : MonoBehaviour {
 		}
 	}
 
-	void setBackgroundColors(){
+	void setBackgroundColors()
+	{
 		day.r = 0.0f;
 		day.g = 1.0f;
 		day.b = 1.0f;

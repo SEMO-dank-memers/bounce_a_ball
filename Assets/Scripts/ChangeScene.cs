@@ -9,5 +9,4 @@ public class ChangeScene : MonoBehaviour
 		//sceneName is entered from unity, within the button.
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Single); //single mode replaces current scene with the new one
 	}
-
 }
