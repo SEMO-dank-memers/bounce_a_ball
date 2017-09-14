@@ -16,7 +16,7 @@ public class BallCreator : MonoBehaviour {
         {
             Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //translate the cords of the mouse to a ingame point
             spawnPosition.z = 0.0f;
-            GameObject objectInstance = Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(new Vector3(0, 0, 0))); //spawn the ball at the cords of the found ingame point
+            Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(new Vector3(0, 0, 0))); //spawn the ball at the cords of the found ingame point
         }
     }
 }
