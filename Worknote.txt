@@ -3,3 +3,5 @@ Aaron Gunther = Button on title screen and part of the code's documentation
 Michael Ranciglio = Sound on wall hit and part of the code's documentation
 
 See the commits on https://github.com/SEMO-dank-memers/bounce_a_ball for a complete list
+
+Jonathon - made title screen and put sound on rock collisions with other rocks
