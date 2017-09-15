@@ -2,7 +2,7 @@ For lab 2 and 3:
 
 Aaron Gunther = Button on title screen and part of the code's documentation
 Michael Ranciglio = Sound on wall hit and part of the code's documentation
-Jonathon - made title screen and put sound on rock collisions with other rocks
-
+Jonathon Bryant = Made title screen and put sound on rock collisions with other rocks
+Stephen Sladek = Created button text blinking script, background color transition script, and added background music for both scenes
 
 See the commits on https://github.com/SEMO-dank-memers/bounce_a_ball for a complete list
