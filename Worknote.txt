@@ -1,2 +1,2 @@
 For lab 2 and 3:
-Aaron Gunther = Button on title screen and part of code documentation
+Aaron Gunther = Button on title screen and part of the code's documentation
