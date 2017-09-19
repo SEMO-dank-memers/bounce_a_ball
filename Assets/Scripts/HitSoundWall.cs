@@ -13,6 +13,7 @@ public class HitSoundWall : MonoBehaviour //I know it says wall, but it's only f
 		if (c.gameObject.name == "Floor") { //ensures that this sound only plays when the rocks hit the floor (Stephen wanted it like this, so blame him if it lowers our grade)
 			Source.clip = Clip; //sets the clip the source should play
 			Source.Play();
+            Destroy(GameObject.Find("Ball(Clone)")); //Destroys the rock when it hits the floor
 		}
 	}
 }

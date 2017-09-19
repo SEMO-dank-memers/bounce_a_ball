@@ -8,10 +8,14 @@ public class BallCreator : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetMouseButtonDown(0)) {
-			Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //translate the cords of the mouse to a ingame point
-			spawnPosition.z = 0.0f;
-			Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(new Vector3(0, 0, 0))); //spawn the ball at the cords of the found ingame point
-		}
+        if (GameObject.Find("Ball(Clone)") == null) //Makes sure only one rock is created
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector3 spawnPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //translate the cords of the mouse to a ingame point
+                spawnPosition.z = 0.0f;
+                Instantiate(objectToSpawn, spawnPosition, Quaternion.Euler(new Vector3(0, 0, 0))); //spawn the ball at the cords of the found ingame point
+            }
+        }
 	}
 }
