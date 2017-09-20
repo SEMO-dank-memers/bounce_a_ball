@@ -5,4 +5,7 @@ Michael Ranciglio = Sound on wall hit and part of the code's documentation
 Jonathon Bryant = Made title screen and put sound on rock collisions with other rocks
 Stephen Sladek = Created button text blinking script, background color transition script, and added background music for both scenes
 
+For lab 4 and 5
+Jonathon Bryant - Changed the size of rock, gravity on rock, spawn rate of rock, and made it where the rock is destroyed when it hits the floor
+
 See the commits on https://github.com/SEMO-dank-memers/bounce_a_ball for a complete list
