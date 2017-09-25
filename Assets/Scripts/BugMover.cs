@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BugMover : MonoBehaviour {
-	private bool hitByRock;
+	private bool hitByRock; //if hitByRock is true, the fly gets destroyed
 	StateMachine stateMachine = new StateMachine();
 	public float speed;
 	Vector2 waypoint = new Vector2 ();
 	// Use this for initialization
 	void Start () {
-		stateMachine.setBehaviour (StateMachine.State.IDLE);
-		setNewWayPoint ();
+		stateMachine.setBehaviour (StateMachine.State.IDLE); //initial behaviour is idle
+		setNewWayPoint (); //selects a random point for the idling state
 	}
 
 	// Update is called once per frame
 	void Update () {
 		stateMachine.ChangeState ();
 		float step = speed * Time.deltaTime;
+		//logic for chasing, moves towards the spawn point for food
 		if (stateMachine.getCurrentState() == StateMachine.State.CHASING) {
 			Vector2 foodPosition = new Vector2 (0, -3.5f);
 			transform.position = Vector2.MoveTowards(transform.position, foodPosition, step);
 		}
+		//logic for retreating, moves back to its approximate origin point
 		else if(stateMachine.getCurrentState() == StateMachine.State.RETREATING){
 			Vector2 home = new Vector2(6.0f,3.5f);
 			transform.position = Vector2.MoveTowards(transform.position, home, step);
@@ -28,12 +30,14 @@ public class BugMover : MonoBehaviour {
 				stateMachine.atOrigin = true;
 			}
 		}
+		//logic for idle, moves to a random point then selects a new point to move to
 		else if(stateMachine.getCurrentState() == StateMachine.State.IDLE){
 			if (gameObject.transform.position.x == waypoint.x && gameObject.transform.position.y == waypoint.y) {
 				setNewWayPoint ();
 			}
 			transform.position = Vector2.MoveTowards(transform.position, waypoint, step);
 		}
+		//flips the sprite horizontally depending on which side of the screen it is on
 		var transformer = gameObject.transform.localScale;
 		if (gameObject.transform.position.x < 0) {
 			transformer.x = -2;

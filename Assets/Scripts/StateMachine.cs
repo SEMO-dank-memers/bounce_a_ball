@@ -11,7 +11,7 @@ public class StateMachine : MonoBehaviour {
 	public GameObject bug;
 	public float threshhold;
 	public bool atOrigin = false;
-
+	//gets the current state that the GameObject is in
 	public State getCurrentState(){
 		if (currentState == State.CHASING) {
 			return State.CHASING;
@@ -21,16 +21,17 @@ public class StateMachine : MonoBehaviour {
 			return State.IDLE;
 		}
 	}
-
+	//changes to the last given state, this function isn't used but is good for practice
 	public void ChangeToPreviousState()
 	{
 		State temp = currentState;
 		currentState = previousState;
 		previousState = temp;
 	}
-
+	//this provides the logic for when to transition from one state to the next
 	public void ChangeState()
 	{
+		//if in idle and there is food, start chasing
 		if(currentState == State.IDLE)
 		{
 			if (GameObject.FindWithTag ("Food")) {
@@ -39,6 +40,7 @@ public class StateMachine : MonoBehaviour {
 					setBehaviour (State.CHASING);
 				}
 		}
+		//if in chasing and the food is eaten, change to retreating
 		else if(currentState == State.CHASING)
 		{
 			if (!GameObject.FindWithTag ("Food")) {
@@ -47,6 +49,7 @@ public class StateMachine : MonoBehaviour {
 				setBehaviour (State.RETREATING);
 			}
 		}
+		//if in retreating and you have reached your origin point, change to idle
 		else if(currentState == State.RETREATING)
 		{
 			if (atOrigin) {

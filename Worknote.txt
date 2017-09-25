@@ -8,5 +8,7 @@ Stephen Sladek = Created button text blinking script, background color transitio
 For lab 4 and 5
 Aaron Gunther - Added food and the script to control the spawning of food after the AI has "eaten" it.
 Jonathon Bryant - Changed the size of rock, gravity on rock, spawn rate of rock, and made it where the rock is destroyed when it hits the floor
+Stephen Sladek - Created the BugMover and StateMachine scripts
+Michael Ranciglio - Added fly to main menu with logic and animation
 
 See the commits on https://github.com/SEMO-dank-memers/bounce_a_ball for a complete list
