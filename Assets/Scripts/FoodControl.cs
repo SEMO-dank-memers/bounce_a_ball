@@ -26,5 +26,12 @@ public class FoodControl : MonoBehaviour {
 		running = false; // allow check to run again
 		eaten = false; // allow other program to cause the check to run again
 	}
+
+	void OnCollisionEnter2D(Collision2D c){
+		if(c.gameObject.tag == ("Bug")){
+			eaten = true;
+			Debug.Log ("Om nom nom!");
+		}
+	}
 }
 	
