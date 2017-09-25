@@ -1,0 +1,5 @@
+digraph{
+idle -> chasing[label="Food Found"];
+chasing -> retreat[label="Food eaten"];
+retreat -> idle[label="Return to origin"];
+}
